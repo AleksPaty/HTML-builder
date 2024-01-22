@@ -22,8 +22,9 @@ const writeFile = async () => {
       if (line === 'exit') {
         rLine.write('> Buy!');
         rLine.close();
+      } else {
+        writeStream.write(line + ' ');
       }
-      writeStream.write(line + ' ');
     });
 
     rLine.on('SIGINT', () => {
